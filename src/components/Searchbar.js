@@ -14,7 +14,7 @@ export class Searchbar extends Component {
           type="text"
           name="search"
           style={{ flex: "10", padding: "5px" }}
-          placeholder=""
+          placeholder="Search Image..."
           value={this.state.search}
           onChange={this.onChange}
         />
