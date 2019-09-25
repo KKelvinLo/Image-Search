@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
 import Searchbar from "./components/Searchbar";
+import Header from "./components/layout/Header";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Image-Search</header>
+      <Header></Header>
       <Searchbar></Searchbar>
     </div>
   );
