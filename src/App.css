@@ -22,3 +22,7 @@ a {
   padding: 7px 20px;
   cursor: pointer;
 }
+
+.container {
+  padding: 0 1rem;
+}

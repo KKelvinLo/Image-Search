@@ -1,0 +1,15 @@
+.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 0 10px;
+  grid-auto-rows: 10px;
+}
+
+.images img {
+  width: 255px;
+  padding: 10px;
+  grid-row-end: span 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

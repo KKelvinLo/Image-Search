@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 
-export class Searchbar extends Component {
+export default class Searchbar extends Component {
   state = {
     search: ""
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+  onSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state.search);
+  };
 
   render() {
     return (
@@ -13,7 +18,7 @@ export class Searchbar extends Component {
         <input
           type="text"
           name="search"
-          style={{ flex: "10", padding: "5px" }}
+          style={{ flex: "10", padding: "8px" }}
           placeholder="Search Image..."
           value={this.state.search}
           onChange={this.onChange}
@@ -28,5 +33,3 @@ export class Searchbar extends Component {
     );
   }
 }
-
-export default Searchbar;

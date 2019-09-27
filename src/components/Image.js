@@ -6,26 +6,33 @@ export default class Image extends Component {
     this.state = {
       size: 0
     };
-    setSize = this.setSize.bind(this);
-    this.ref = react.CreateRef();
+    this.setSize = this.setSize.bind(this);
+    this.ref = React.createRef();
   }
 
   setSize() {
-    const size = Math.round(imageRef.height);
+    const size = Math.round(this.ref.current.height / 9);
 
     this.setState({ size });
   }
 
-  state = { size: 0 };
-  setSize = this.setSize.bind(this);
+  componentDidMount() {
+    this.ref.current.addEventListener("load", this.setSize);
+  }
 
   render() {
     return (
-      <div style={{ gridRowEnd: `size ${size}` }}>
-        <img ref alt={description} src={url.regular} />
+      <div
+        style={{
+          gridRowEnd: `span ${this.state.size}`
+        }}
+      >
+        <img
+          ref={this.ref}
+          alt={this.props.image.description}
+          src={this.props.image.urls.regular}
+        />
       </div>
     );
   }
 }
-
-const { url, description, imageRef, size } = this.props.Image;
